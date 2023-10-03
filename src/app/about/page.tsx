@@ -8,7 +8,6 @@ import { Button } from '@nextui-org/button';
 // Internal imports
 import awsconfig from '../../aws-exports';
 import { Title, Bold } from "@tremor/react";
-import AreaChartComponent from '@/src/components/area_chart_component';
 
 // Styles
 import '@aws-amplify/ui-react/styles.css';
