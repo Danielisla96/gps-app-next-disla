@@ -1,9 +1,22 @@
-import { title } from "@/components/primitives";
+"use client"
 
-export default function PricingPage() {
+import { Amplify } from 'aws-amplify';
+import awsconfig from '../../aws-exports';
+import '@aws-amplify/ui-react/styles.css';
+import type { WithAuthenticatorProps } from '@aws-amplify/ui-react';
+import { withAuthenticator } from '@aws-amplify/ui-react';
+import { Button } from '@nextui-org/button';
+import { Bold, Title } from '@tremor/react';
+Amplify.configure(awsconfig);
+
+export function PricingPage({ signOut, user }: WithAuthenticatorProps) {
 	return (
-		<div>
-			<h1 className={title()}>Pricing</h1>
-		</div>
+		<>
+		<Bold>Hola {user?.attributes?.email}</Bold>
+		<Title>Esta es la página de Pricing</Title>
+		<Button color="secondary" onClick={signOut}>Sign out</Button>
+	  </>
 	);
-}
+  }
+  
+  export default withAuthenticator(PricingPage);

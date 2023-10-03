@@ -2,7 +2,7 @@ import * as React from "react";
 import { IconSvgProps } from "@/types";
 
 export const Logo: React.FC<IconSvgProps> = ({
-	size = 36,
+	size = 48,
 	width,
 	height,
 	...props
@@ -10,18 +10,21 @@ export const Logo: React.FC<IconSvgProps> = ({
 	<svg
 		fill="none"
 		height={size || height}
-		viewBox="0 0 32 32"
+		viewBox="0 0 32 32"  // Ajustado para un cuadrado estándar de 24x24
 		width={size || width}
 		{...props}
 	>
-		<path
-			clipRule="evenodd"
-			d="M17.6482 10.1305L15.8785 7.02583L7.02979 22.5499H10.5278L17.6482 10.1305ZM19.8798 14.0457L18.11 17.1983L19.394 19.4511H16.8453L15.1056 22.5499H24.7272L19.8798 14.0457Z"
-			fill="currentColor"
-			fillRule="evenodd"
+		<path 
+			d="M7 12H17M8 8.5C8 8.5 9 9 10 9C11.5 9 12.5 8 14 8C15 8 16 8.5 16 8.5M8 15.5C8 15.5 9 16 10 16C11.5 16 12.5 15 14 15C15 15 16 15.5 16 15.5M21 12C21 16.9706 16.9706 21 12 21C7.02944 21 3 16.9706 3 12C3 7.02944 7.02944 3 12 3C16.9706 3 21 7.02944 21 12Z" 
+			stroke="currentColor" 
+			strokeWidth="2" 
+			strokeLinecap="round" 
+			strokeLinejoin="round"
+			transform="translate(10, 4)"
 		/>
 	</svg>
 );
+
 
 export const DiscordIcon: React.FC<IconSvgProps> = ({
 	size = 24,

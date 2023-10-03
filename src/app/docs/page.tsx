@@ -1,9 +1,22 @@
-import { title } from "@/components/primitives";
+"use client"
 
-export default function DocsPage() {
+import { Amplify } from 'aws-amplify';
+import awsconfig from '../../aws-exports';
+import '@aws-amplify/ui-react/styles.css';
+import type { WithAuthenticatorProps } from '@aws-amplify/ui-react';
+import { withAuthenticator } from '@aws-amplify/ui-react';
+import { Button } from '@nextui-org/button';
+import { Bold, Title } from '@tremor/react';
+Amplify.configure(awsconfig);
+
+export function DocsPage({ signOut, user }: WithAuthenticatorProps) {
 	return (
-		<div>
-			<h1 className={title()}>Docs</h1>
-		</div>
+		<>
+		<Bold>Hola {user?.attributes?.email}</Bold>
+		<Title>Esta es la página de Docs</Title>
+		<Button color="secondary" onClick={signOut}>Sign out</Button>
+	  </>
 	);
-}
+  }
+  
+  export default withAuthenticator(DocsPage);

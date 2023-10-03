@@ -1,64 +1,25 @@
 "use client"
-import NextLink from "next/link";
-import { Link } from "@nextui-org/link";
-import { Snippet } from "@nextui-org/snippet";
-import { Code } from "@nextui-org/code"
-import { button as buttonStyles } from "@nextui-org/theme";
-import { siteConfig } from "@/config/site";
-import { title, subtitle } from "@/components/primitives";
-import { GithubIcon } from "@/components/icons";
-import  SimpleCard  from "@/components/simple_card";
-import AreaChartComponent from "@/components/area_chart_component";
+
+import { Amplify } from 'aws-amplify';
+import awsconfig from '../aws-exports';
 import '@aws-amplify/ui-react/styles.css';
+import type { WithAuthenticatorProps } from '@aws-amplify/ui-react';
+import { withAuthenticator } from '@aws-amplify/ui-react';
+import { Button } from '@nextui-org/button';
+import { Bold, Title } from '@tremor/react';
+Amplify.configure(awsconfig);
 
 
-export default function Home() {
+
+export function HomePage({ signOut, user }: WithAuthenticatorProps) {
+
 	return (
-		<section className="flex flex-col items-center justify-center gap-4 py-8 md:py-10">
-			<div className="inline-block max-w-lg text-center justify-center">
-				<h1 className={title()}>Make&nbsp;</h1>
-				<h1 className={title({ color: "violet" })}>beautiful&nbsp;</h1>
-				<br />
-				<h1 className={title()}>
-					websites regardless of your design experience.
-				</h1>
-				<h2 className={subtitle({ class: "mt-4" })}>
-					Beautiful, fast and modern React UI library.
-				</h2>
-			</div>
-
-			<div className="flex gap-3">
-				<Link
-					isExternal
-					as={NextLink}
-					href={siteConfig.links.docs}
-					className={buttonStyles({ color: "primary", radius: "full", variant: "shadow" })}
-				>
-					Documentation
-				</Link>
-				<Link
-					isExternal
-					as={NextLink}
-					className={buttonStyles({ variant: "bordered", radius: "full" })}
-					href={siteConfig.links.github}
-				>
-					<GithubIcon size={20} />
-					GitHub
-				</Link>
-			</div>
-
-			<div className="mt-8">
-				<Snippet hideSymbol hideCopyButton variant="flat">
-					<span>
-						Get started by editing <Code color="primary">app/page.tsx</Code>
-					</span>
-				</Snippet>
-
-			</div>
-
-			<SimpleCard></SimpleCard>
-			
-			<AreaChartComponent></AreaChartComponent>
-		</section>
+		<>
+			<Bold>Hola {user?.attributes?.email}</Bold>
+			<Title>Esta es la página de Home</Title>
+			<Button color="secondary" onClick={signOut}>Sign out</Button>
+	  	</>
 	);
-}
+  }
+  
+  export default withAuthenticator(HomePage);
