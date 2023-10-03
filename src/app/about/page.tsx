@@ -7,15 +7,16 @@ import type { WithAuthenticatorProps } from '@aws-amplify/ui-react';
 import { withAuthenticator } from '@aws-amplify/ui-react';
 import { Button } from '@nextui-org/button';
 import { Title, Bold } from "@tremor/react";
+import AreaChartComponent from '@/components/area_chart_component';
 Amplify.configure(awsconfig);
 
 export function AboutPage({ signOut, user }: WithAuthenticatorProps) {
 	return (
-	  <>
-		<Bold>Hola {user?.attributes?.email}</Bold>
-		<Title>Esta es la página de About</Title>
-		<Button color="secondary" onClick={signOut}>Sign out</Button>
-	  </>
+	<div>
+        <Bold className="block w-full">Hola {user?.attributes?.email}</Bold>
+        <Title className="block w-full mt-2">Esta es la página de About</Title>
+        <Button className="block w-full mt-2" color="secondary" onClick={signOut}>Sign out</Button>
+    </div>
 	);
   }
   

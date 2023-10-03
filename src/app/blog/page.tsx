@@ -12,9 +12,9 @@ Amplify.configure(awsconfig);
 export function BlogPage({ signOut, user }: WithAuthenticatorProps) {
 	return (
 		<>
-		<Bold>Hola {user?.attributes?.email}</Bold>
-		<Title>Esta es la página de Blog</Title>
-		<Button color="secondary" onClick={signOut}>Sign out</Button>
+        <Bold className="block w-full">Hola {user?.attributes?.email}</Bold>
+        <Title className="block w-full mt-2">Esta es la página de Blog</Title>
+        <Button className="block w-full mt-2" color="secondary" onClick={signOut}>Sign out</Button>
 	  </>
 	);
   }
