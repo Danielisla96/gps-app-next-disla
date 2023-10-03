@@ -1,22 +1,28 @@
 "use client"
-
+// External libraries
 import { Amplify } from 'aws-amplify';
-import awsconfig from '../../aws-exports';
-import '@aws-amplify/ui-react/styles.css';
-import type { WithAuthenticatorProps } from '@aws-amplify/ui-react';
 import { withAuthenticator } from '@aws-amplify/ui-react';
+import type { WithAuthenticatorProps } from '@aws-amplify/ui-react';
 import { Button } from '@nextui-org/button';
-import { Bold, Title } from '@tremor/react';
+
+// Internal imports
+import awsconfig from '../../aws-exports';
+import { Title, Bold } from "@tremor/react";
+
+// Styles
+import '@aws-amplify/ui-react/styles.css';
+
+// Amplify configuration
 Amplify.configure(awsconfig);
 
-export function PricingPage({ signOut, user }: WithAuthenticatorProps) {
+function AboutPage({ signOut, user }: WithAuthenticatorProps) {
 	return (
-		<>
-        <Bold className="block w-full">Hola {user?.attributes?.email}</Bold>
-        <Title className="block w-full mt-2">Esta es la página de Pricing</Title>
-        <Button className="block w-full mt-2" color="secondary" onClick={signOut}>Sign out</Button>
-	  </>
+		<div>
+			<Bold className="block w-full">Hola {user?.attributes?.email}</Bold>
+			<Title className="block w-full mt-2">Esta es la página de Pricing</Title>
+			<Button className="block w-full mt-2" color="secondary" onClick={signOut}>Sign out</Button>
+		</div>
 	);
-  }
-  
-  export default withAuthenticator(PricingPage);
+}
+
+export default withAuthenticator(AboutPage);
