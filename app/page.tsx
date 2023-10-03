@@ -11,6 +11,7 @@ import  SimpleCard  from "@/components/simple_card";
 import AreaChartComponent from "@/components/area_chart_component";
 import '@aws-amplify/ui-react/styles.css';
 
+
 export default function Home() {
 	return (
 		<section className="flex flex-col items-center justify-center gap-4 py-8 md:py-10">
@@ -53,9 +54,6 @@ export default function Home() {
 					</span>
 				</Snippet>
 
-				
-
-				
 			</div>
 
 			<SimpleCard></SimpleCard>

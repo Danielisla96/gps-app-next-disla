@@ -1,5 +1,6 @@
 import { Button, Card, Text, Heading, Theme, defaultDarkModeOverride, ColorMode } from "@aws-amplify/ui-react";
 import { ThemeProvider } from '@aws-amplify/ui-react';
+import { Authenticator } from '@aws-amplify/ui-react';
 import React, { useEffect, useState } from 'react';
 import { useTheme } from "next-themes";
 
@@ -21,12 +22,17 @@ const SimpleCard: React.FC = () => {
   if (!amplifyColorMode) return null;
 
   return (
-    <ThemeProvider theme={themes} colorMode={amplifyColorMode}>
-      <Card variation="outlined">
-        <Heading level={6}>Heading text</Heading>
-        <Text>Some sample text for this card.</Text>
-      </Card>
-    </ThemeProvider>
+    <Authenticator>
+    {({ signOut, user }) => (
+      <ThemeProvider theme={themes} colorMode={amplifyColorMode}>
+        
+        <Card variation="outlined">
+          <Heading level={6}>Heading text</Heading>
+          <Text>Some sample text for this card.</Text>
+        </Card>
+      </ThemeProvider>
+    )}
+    </Authenticator>
   );
 }
 
