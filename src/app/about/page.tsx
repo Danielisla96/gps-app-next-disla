@@ -7,7 +7,7 @@ import type { WithAuthenticatorProps } from '@aws-amplify/ui-react';
 import { withAuthenticator } from '@aws-amplify/ui-react';
 import { Button } from '@nextui-org/button';
 import { Title, Bold } from "@tremor/react";
-import AreaChartComponent from '@/components/area_chart_component';
+import AreaChartComponent from '@/src/components/area_chart_component';
 Amplify.configure(awsconfig);
 
 export function AboutPage({ signOut, user }: WithAuthenticatorProps) {
