@@ -1,3 +1,4 @@
+"use client"
 // External libraries
 import { Amplify } from 'aws-amplify';
 import { withAuthenticator } from '@aws-amplify/ui-react';
