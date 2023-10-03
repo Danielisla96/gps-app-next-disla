@@ -57,7 +57,7 @@ export const Navbar = () => {
 						<p className="font-bold text-xl text-inherit">WavesByte</p>
 					</NextLink>
 				</NavbarBrand>
-				<ul className="hidden lg:flex gap-4 justify-start ml-2">
+				<ul className="lg:flex hidden gap-4 justify-start ml-2">
 					{siteConfig.navItems.map((item) => (
 						<NavbarItem key={item.href}>
 							<NextLink
@@ -75,10 +75,7 @@ export const Navbar = () => {
 				</ul>
 			</NavbarContent>
 
-			<NavbarContent
-				className="hidden sm:flex basis-1/5 sm:basis-full"
-				justify="end"
-			>
+			<NavbarContent className="hidden lg:flex basis-1/5 sm:basis-full" justify="end">
 				<NavbarItem className="hidden lg:flex gap-2">
 					<ThemeSwitch />
 				</NavbarItem>
@@ -102,7 +99,7 @@ export const Navbar = () => {
 				<NavbarMenuToggle />
 			</NavbarContent>
 
-			<NavbarMenu>
+			<NavbarMenu className="lg:hidden md:block sm:block">
 				{searchInput}
 				<div className="mx-4 mt-2 flex flex-col gap-2">
 					{siteConfig.navMenuItems.map((item, index) => (
