@@ -9,6 +9,7 @@ import { title, subtitle } from "@/components/primitives";
 import { GithubIcon } from "@/components/icons";
 import  SimpleCard  from "@/components/simple_card";
 import AreaChartComponent from "@/components/area_chart_component";
+import '@aws-amplify/ui-react/styles.css';
 
 export default function Home() {
 	return (

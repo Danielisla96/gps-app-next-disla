@@ -1,13 +1,33 @@
-import { Card, Text, Metric } from "@tremor/react";
-import React from 'react'
+import { Button, Card, Text, Heading, Theme, defaultDarkModeOverride, ColorMode } from "@aws-amplify/ui-react";
+import { ThemeProvider } from '@aws-amplify/ui-react';
+import React, { useEffect, useState } from 'react';
+import { useTheme } from "next-themes";
 
-const SimpleCard = () => {
+const SimpleCard: React.FC = () => {
+  const { theme } = useTheme();
+  const [amplifyColorMode, setAmplifyColorMode] = useState<ColorMode | undefined>(undefined);
+
+  useEffect(() => {
+    if (theme) {
+      setAmplifyColorMode(theme === 'dark' ? 'dark' : 'light');
+    }
+  }, [theme]);
+
+  const themes = {
+    name: 'my-theme',
+    overrides: [defaultDarkModeOverride],
+  };
+
+  if (!amplifyColorMode) return null;
+
   return (
-    <Card className="max-w-xs mx-auto" decoration="top" decorationColor="indigo">
-        <Text>Sales</Text>
-        <Metric>$ 34,743</Metric>
-    </Card>
-  )
+    <ThemeProvider theme={themes} colorMode={amplifyColorMode}>
+      <Card variation="outlined">
+        <Heading level={6}>Heading text</Heading>
+        <Text>Some sample text for this card.</Text>
+      </Card>
+    </ThemeProvider>
+  );
 }
 
-export default SimpleCard
+export default SimpleCard;
