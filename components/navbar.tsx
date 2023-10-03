@@ -18,13 +18,13 @@ import { siteConfig } from "@/config/site";
 import NextLink from "next/link";
 import clsx from "clsx";
 
-import { ThemeSwitch } from "@/src/components/theme-switch";
+import { ThemeSwitch } from "@/components/theme-switch";
 import {
 	HeartFilledIcon,
 	SearchIcon,
-} from "@/src/components/icons";
+} from "@/components/icons";
 
-import { Logo } from "@/src/components/icons";
+import { Logo } from "@/components/icons";
 
 export const Navbar = () => {
 	const searchInput = (

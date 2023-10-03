@@ -11,7 +11,7 @@ import { Title, Bold } from "@tremor/react";
 
 // Styles
 import '@aws-amplify/ui-react/styles.css';
-import AreaChartComponent from '../components/area_chart_component';
+import AreaChartComponent from '../../components/area_chart_component';
 
 // Amplify configuration
 Amplify.configure(awsconfig);
