@@ -1,33 +1,28 @@
 "use client"
-
+// External libraries
 import { Amplify } from 'aws-amplify';
-import awsconfig from '../aws-exports';
-import '@aws-amplify/ui-react/styles.css';
-import type { WithAuthenticatorProps } from '@aws-amplify/ui-react';
 import { withAuthenticator } from '@aws-amplify/ui-react';
+import type { WithAuthenticatorProps } from '@aws-amplify/ui-react';
 import { Button } from '@nextui-org/button';
-import { Bold, Title } from '@tremor/react';
-import AreaChartComponent from '@/src/components/area_chart_component';
+
+// Internal imports
+import awsconfig from '../aws-exports';
+import { Title, Bold } from "@tremor/react";
+
+// Styles
+import '@aws-amplify/ui-react/styles.css';
+
+// Amplify configuration
 Amplify.configure(awsconfig);
 
-
-
-export function HomePage({ signOut, user }: WithAuthenticatorProps) {
-
+function HomePage({ signOut, user }: WithAuthenticatorProps) {
 	return (
-
-    <section className="w-full">
-        <Bold className="block w-full">Hola {user?.attributes?.email}</Bold>
-        <Title className="block w-full mt-2">Esta es la página de Home</Title>
-        <Button className="block w-full mt-2" color="secondary" onClick={signOut}>Sign out</Button>
-        <div className="w-full mt-2">
-            <AreaChartComponent />
-        </div>
-    </section>
-
-
-
+		<div>
+			<Bold className="block w-full">Hola {user?.attributes?.email}</Bold>
+			<Title className="block w-full mt-2">Esta es la página de About</Title>
+			<Button className="block w-full mt-2" color="secondary" onClick={signOut}>Sign out</Button>
+		</div>
 	);
-  }
-  
-  export default withAuthenticator(HomePage);
+}
+
+export default withAuthenticator(HomePage);

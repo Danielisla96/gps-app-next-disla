@@ -15,7 +15,7 @@ import '@aws-amplify/ui-react/styles.css';
 // Amplify configuration
 Amplify.configure(awsconfig);
 
-function AboutPage({ signOut, user }: WithAuthenticatorProps) {
+function BlogPage({ signOut, user }: WithAuthenticatorProps) {
 	return (
 		<div>
 			<Bold className="block w-full">Hola {user?.attributes?.email}</Bold>
@@ -25,4 +25,4 @@ function AboutPage({ signOut, user }: WithAuthenticatorProps) {
 	);
 }
 
-export default withAuthenticator(AboutPage);
+export default withAuthenticator(BlogPage);
