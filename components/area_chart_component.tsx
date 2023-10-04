@@ -39,18 +39,20 @@ const dataFormatter = (number: number) => {
 
 const AreaChartComponent = () => {
   return (
-    <Card>
-        <Title>Newsletter revenue over time (USD)</Title>
-        <AreaChart
-        className="h-72 mt-4"
-        data={chartdata}
-        index="date"
-        yAxisWidth={60}
-        categories={["SemiAnalysis", "The Pragmatic Engineer"]}
-        colors={["indigo", "cyan"]}
-        valueFormatter={dataFormatter}
-        />
-  </Card>
+    <div className="w-full mx-auto">
+      <Card>
+          <Title>Newsletter revenue over time (USD)</Title>
+          <AreaChart
+          className="h-72 mt-4"
+          data={chartdata}
+          index="date"
+          yAxisWidth={60}
+          categories={["SemiAnalysis", "The Pragmatic Engineer"]}
+          colors={["indigo", "cyan"]}
+          valueFormatter={dataFormatter}
+          />
+    </Card>
+  </div>
   )
 }
 
