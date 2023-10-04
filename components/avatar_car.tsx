@@ -13,7 +13,7 @@ export default function AvatarCar() {
           objectPosition: "center" // Centra la imagen
         }}
         classNames={{
-          base: "bg-gradient-to-br from-[#FFFFFF] to-[#EEEEEE]",
+          base: "bg-gradient-to-br from-[#ddd9e6] to-[#ddd9e6]",
           icon: "text-black/80",
         }}
       />
