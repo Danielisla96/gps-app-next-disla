@@ -8,12 +8,14 @@ import { Button } from '@nextui-org/button';
 
 // Internal imports
 import awsconfig from '../aws-exports';
-import { Title, Bold } from "@tremor/react";
+import { Title, Bold, Card } from "@tremor/react";
 
 // Styles
 import '@aws-amplify/ui-react/styles.css';
 import AreaChartComponent from '../../components/area_chart_component';
 import KpiCard from '@/components/kpi_card';
+import AccordionCard from '@/components/accordion_card';
+import { Divider } from "@tremor/react";
 
 // Amplify configuration
 Amplify.configure(awsconfig);
@@ -21,10 +23,36 @@ Amplify.configure(awsconfig);
 function HomePage({ signOut, user }: WithAuthenticatorProps) {
     return (
         <div className="p-4">
-            <Bold className="block w-full mb-2">Hola {user?.attributes?.email}</Bold>
-            <Title className="block w-full mb-4">Esta es la página de Home</Title>
+		
+
+		<div className="flex flex-wrap justify-center p-2"> 
+			<h1 className="tracking-tight inline font-semibold from-[#FF1CF7] to-[#b249f8] text-[2.5rem] md:text-3xl lg:text-5xl bg-clip-text text-transparent bg-gradient-to-b">Bienvenido&nbsp;</h1>
+			<h1 className="tracking-tight inline font-semibold text-[2.5rem] md:text-3xl lg:text-5xl">a WavesByte&nbsp;</h1>
+		</div>
+
+		<div className="flex flex-wrap justify-center">
+			<h1 className='tracking-tight inline font-semibold text-[2.5rem] md:text-3xl lg:text-2xl bg-clip-text'>{user?.attributes?.email}</h1>
+		</div>
+
+
+
+
+
+			<div className="flex flex-wrap justify-center mb-4 p-2">
+
+			<AccordionCard />
+
+			</div>
+
+			<Divider />
+
+
+			<div className="flex flex-wrap justify-center p-2"> 
+				<h1 className="tracking-tight inline font-semibold text-[2.5rem] lg:text-5xl">Tablero en&nbsp;</h1>
+				<h1 className="tracking-tight inline font-semibold from-[#FF1CF7] to-[#b249f8] text-[2.5rem] lg:text-5xl bg-clip-text text-transparent bg-gradient-to-b">Tiempo Real&nbsp;</h1>
+			</div>
             
-            <div className="flex flex-wrap justify-center mb-4">
+            <div className="flex flex-wrap justify-center">
 
                 <div className="w-full md:w-1/2 lg:w-1/4 xl:w-1/6 p-2">
                     <KpiCard />

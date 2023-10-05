@@ -94,15 +94,18 @@ export default function KpiCard() {
 
       <Card className="my-4"> 
         <Flex justifyContent="start" alignItems="baseline" className="space-x-1">
-            <Title>Max velocidad por hora: 2023-09-04</Title>
+            <Title>Historial Velocidad: 2023-09-04</Title>
         </Flex>
         <Tracker data={availability} className="mt-2" />
       </Card>
 
 
       
-      <div className="p-2 mt-4">
-        <Button className="w-full mx-auto m-2" color="sky"> Ver Posición </Button>
+      <div className="p-1">
+        <Button className="w-full mx-auto m-2" color="blue"> Ver Ubicación Actual </Button>
+      </div>
+      <div className="p-1">
+        <Button className="w-full mx-auto m-2" color="rose"> Ver Historial </Button>
       </div>
     </Card>
   );
