@@ -101,12 +101,12 @@ export default function KpiCard() {
 
 
       
-      <div className="p-1">
-        <Button className="w-full mx-auto m-2" color="blue"> Ver Ubicación Actual </Button>
+      <div className="flex justify-center space-x-2">
+            <Button className="mx-auto m-2" color="blue"> Ver Ubicación </Button>
+            <Button className="mx-auto m-2" color="rose"> Ver Historial </Button>
       </div>
-      <div className="p-1">
-        <Button className="w-full mx-auto m-2" color="rose"> Ver Historial </Button>
-      </div>
+
+
     </Card>
   );
 }

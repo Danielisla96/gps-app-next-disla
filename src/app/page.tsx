@@ -22,10 +22,9 @@ Amplify.configure(awsconfig);
 
 function HomePage({ signOut, user }: WithAuthenticatorProps) {
     return (
-        <div className="p-4">
+        <div className="p-0">
 		
-
-		<div className="flex flex-wrap justify-center p-2"> 
+		<div className="flex flex-wrap justify-center p-1"> 
 			<h1 className="tracking-tight inline font-semibold from-[#FF1CF7] to-[#b249f8] text-[2.5rem] md:text-3xl lg:text-5xl bg-clip-text text-transparent bg-gradient-to-b">Bienvenido&nbsp;</h1>
 			<h1 className="tracking-tight inline font-semibold text-[2.5rem] md:text-3xl lg:text-5xl">a WavesByte&nbsp;</h1>
 		</div>
@@ -35,10 +34,7 @@ function HomePage({ signOut, user }: WithAuthenticatorProps) {
 		</div>
 
 
-
-
-
-			<div className="flex flex-wrap justify-center mb-4 p-2">
+			<div className="flex flex-wrap justify-center mt-4 mb-4 p-1">
 
 			<AccordionCard />
 
@@ -47,23 +43,23 @@ function HomePage({ signOut, user }: WithAuthenticatorProps) {
 			<Divider />
 
 
-			<div className="flex flex-wrap justify-center p-2"> 
+			<div className="flex flex-wrap justify-center p-1 mb-4"> 
 				<h1 className="tracking-tight inline font-semibold text-[2.5rem] lg:text-5xl">Tablero en&nbsp;</h1>
 				<h1 className="tracking-tight inline font-semibold from-[#FF1CF7] to-[#b249f8] text-[2.5rem] lg:text-5xl bg-clip-text text-transparent bg-gradient-to-b">Tiempo Real&nbsp;</h1>
 			</div>
             
             <div className="flex flex-wrap justify-center">
 
-                <div className="w-full md:w-1/2 lg:w-1/4 xl:w-1/6 p-2">
+                <div className="w-full md:w-1/2 lg:w-1/4 xl:w-1/6 p-1 mb-4">
                     <KpiCard />
                 </div>
-                <div className="w-full md:w-1/2 lg:w-1/4 xl:w-1/6 p-2">
+                <div className="w-full md:w-1/2 lg:w-1/4 xl:w-1/6 p-1 mb-4">
                     <KpiCard />
                 </div>
-                <div className="w-full md:w-1/2 lg:w-1/4 xl:w-1/6 p-2">
+                <div className="w-full md:w-1/2 lg:w-1/4 xl:w-1/6 p-1 mb-4">
                     <KpiCard />
                 </div>
-				<div className="w-full md:w-1/2 lg:w-1/4 xl:w-1/6 p-2">
+				<div className="w-full md:w-1/2 lg:w-1/4 xl:w-1/6 p-1 mb-4">
                     <KpiCard />
                 </div>
             </div>

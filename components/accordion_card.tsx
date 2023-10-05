@@ -12,9 +12,9 @@ export default function AccordionCard() {
 
   return (
 
-<div className="w-full p-2 flex flex-wrap justify-between"> 
-
-<div className="w-full md:w-1/2 md:pr-2">
+<Accordion variant="shadow">
+    <AccordionItem key="1" aria-label="Accordion 1" title="Ver dispositivos">
+    <div className="w-full md:pr-2">
     <Card decoration="top" decorationColor="teal"> 
         <Metric>Tienes {4} dispositivos</Metric>
         <Callout className="mt-4" title="Ver todos los dispositivos en un mismo mapa" icon={MapIcon} color="slate">
@@ -25,9 +25,10 @@ export default function AccordionCard() {
             <Button className="block w-full mt-2" color="teal"> Ver todos los dispositivos </Button>
         </div>
     </Card>
-</div>
-
-<div className="w-full md:w-1/2 md:pl-2">
+    </div>
+    </AccordionItem>
+    <AccordionItem key="2" aria-label="Accordion 2" title="Registra un dispositivo">
+    <div className="w-full md:pl-2">
     <Card decoration="top" decorationColor="amber"> 
         <Metric>Registra un nuevo dispositivo</Metric>
         <Callout className="mt-4" title="Registrar un nuevo dispositivo." icon={PlusCircleIcon} color="slate">
@@ -38,17 +39,11 @@ export default function AccordionCard() {
             <Button className="block w-full mt-2" color="amber"> Registra un nuevo dispositivo </Button>
         </div>
     </Card>
-</div>
-
-</div>
-
-
+    </div>
+    </AccordionItem>
+  </Accordion>
 
 
 
-
-
-
-
-  );
+    );
 }
