@@ -22,14 +22,14 @@ export default function AccordionCard() {
           />
         }>
     <div className="w-full md:pr-2">
-    <Card decoration="top" decorationColor="teal"> 
+    <Card decoration="top" decorationColor="blue"> 
         <Metric>🟢 Tienes {4} dispositivos conectados</Metric>
         <Callout className="mt-4" title="Ver todos los dispositivos en un mismo mapa." icon={MapIcon} color="slate">
             Puedes ver todos los dispositivos en tiempo real y en un mismo mapa.
         </Callout>
         
         <div className="flex justify-center items-center mt-4">
-            <Button className="block w-full mt-2" color="teal"> Ver todos los dispositivos </Button>
+            <Button className="block w-full mt-2" color="blue"> Ver todos los dispositivos </Button>
         </div>
     </Card>
     </div>
