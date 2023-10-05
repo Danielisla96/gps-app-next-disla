@@ -1,7 +1,9 @@
 import { Badge, Card, Flex, Metric, Text, Button, CategoryBar, Title, Tracker, Color } from "@tremor/react";
-import { StatusOnlineIcon, ChartBarIcon, UserCircleIcon, RssIcon, EyeIcon } from "@heroicons/react/outline";
+import { StatusOnlineIcon, ChartBarIcon, UserCircleIcon, RssIcon, EyeIcon, MapIcon, ClockIcon, InformationCircleIcon } from "@heroicons/react/outline";
 import AvatarCar from "./avatar_car";
 import { useEffect, useState } from "react";
+import {Popover, PopoverTrigger, PopoverContent, Input} from "@nextui-org/react";
+
 
 export interface Availablility {
     color: Color;
@@ -19,7 +21,7 @@ export default function KpiCard() {
       // Genera un número aleatorio entre 0 y 100
       const newVelocity = Math.floor(Math.random() * 101);
       setVelocity(newVelocity);
-    }, 5000); // 5000 milisegundos (5 segundos)
+    }, 2000); // 5000 milisegundos (5 segundos)
 
     // Limpia el intervalo cuando el componente se desmonte
     return () => clearInterval(interval);
@@ -93,20 +95,43 @@ export default function KpiCard() {
 
 
       <Card className="my-4"> 
-        <Flex justifyContent="start" alignItems="baseline" className="space-x-1">
-            <Title>Historial Velocidad: 2023-09-04</Title>
-        </Flex>
+
+    <Flex justifyContent="between" alignItems="baseline" className="w-full space-x-1">
+
+        <Title>Historial: 2023-09-04</Title>
+
+        <div className="ml-auto mb-0">  {/* Aplicado ml-auto para empujar el contenido a la derecha */}
+            <Popover placement="bottom" showArrow offset={10}>
+                <PopoverTrigger>
+                    <Button size="xs" color="blue" icon={InformationCircleIcon}></Button>
+                </PopoverTrigger>
+                <PopoverContent className="w-[240px]">
+                    {(titleProps) => (
+                        <div className="px-1 py-2 w-full">
+                            <p className="text-small font-bold text-foreground" {...titleProps}>
+                                Velocidad Máxima en cada hora del día.
+                            </p>
+                        </div>
+                    )}
+                </PopoverContent>
+            </Popover>
+        </div>
+
+     </Flex>
+
+
         <Tracker data={availability} className="mt-2" />
       </Card>
 
 
       
       <div className="flex justify-center space-x-2">
-            <Button className="mx-auto m-2" color="blue"> Ver Ubicación </Button>
-            <Button className="mx-auto m-2" color="rose"> Ver Historial </Button>
+            <Button className="mx-auto m-2" color="blue" icon={MapIcon}> Ver Ubicación </Button>
+            <Button className="mx-auto m-2" color="rose" icon={ClockIcon}> Ver Historial </Button>
       </div>
 
 
     </Card>
   );
 }
+

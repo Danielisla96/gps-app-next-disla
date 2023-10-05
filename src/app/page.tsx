@@ -25,12 +25,12 @@ function HomePage({ signOut, user }: WithAuthenticatorProps) {
         <div className="p-0">
 		
 		<div className="flex flex-wrap justify-center p-1"> 
-			<h1 className="tracking-tight inline font-semibold from-[#FF1CF7] to-[#b249f8] text-[2.5rem] md:text-3xl lg:text-5xl bg-clip-text text-transparent bg-gradient-to-b">Bienvenido&nbsp;</h1>
-			<h1 className="tracking-tight inline font-semibold text-[2.5rem] md:text-3xl lg:text-5xl">a WavesByte&nbsp;</h1>
+			<h1 className="tracking-tight inline font-semibold from-[#FF1CF7] to-[#b249f8] text-[2.5rem] text-3xl md:text-3xl lg:text-5xl bg-clip-text text-transparent bg-gradient-to-b">Bienvenido&nbsp;</h1>
+			<h1 className="tracking-tight inline font-semibold text-[2.5rem] text-3xl md:text-3xl lg:text-5xl">a WavesByte&nbsp;</h1>
 		</div>
 
 		<div className="flex flex-wrap justify-center">
-			<h1 className='tracking-tight inline font-semibold text-[2.5rem] md:text-3xl lg:text-2xl bg-clip-text'>{user?.attributes?.email}</h1>
+			<h1 className='tracking-tight inline font-semibold text-[2.5rem] text-1xl md:text-3xl lg:text-2xl bg-clip-text'>{user?.attributes?.email}</h1>
 		</div>
 
 
@@ -44,8 +44,8 @@ function HomePage({ signOut, user }: WithAuthenticatorProps) {
 
 
 			<div className="flex flex-wrap justify-center p-1 mb-4"> 
-				<h1 className="tracking-tight inline font-semibold text-[2.5rem] lg:text-5xl">Tablero en&nbsp;</h1>
-				<h1 className="tracking-tight inline font-semibold from-[#FF1CF7] to-[#b249f8] text-[2.5rem] lg:text-5xl bg-clip-text text-transparent bg-gradient-to-b">Tiempo Real&nbsp;</h1>
+				<h1 className="tracking-tight inline font-semibold text-[2.5rem] text-3xl lg:text-5xl">Tablero en&nbsp;</h1>
+				<h1 className="tracking-tight inline font-semibold from-[#FF1CF7] to-[#b249f8] text-[2.5rem] text-3xl lg:text-5xl bg-clip-text text-transparent bg-gradient-to-b">Tiempo Real&nbsp;</h1>
 			</div>
             
             <div className="flex flex-wrap justify-center">
