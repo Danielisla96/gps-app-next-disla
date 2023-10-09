@@ -17,12 +17,12 @@ export const siteConfig = {
       href: "/pricing",
     },
     {
-      label: "Blog",
-      href: "/blog",
+      label: "MapId",
+      href: "/map_id",
     },
     {
-      label: "About",
-      href: "/about",
+      label: "Register",
+      href: "/register",
     }
 	],
 	navMenuItems: [
@@ -39,12 +39,12 @@ export const siteConfig = {
 			href: "/pricing",
 		},
 		{
-			label: "Blog",
-			href: "/blog",
+			label: "MapId",
+			href: "/map_id",
 		},
 		{
-			label: "About",
-			href: "/about",
+			label: "Register",
+			href: "/register",
 		}
 	],
 	links: {

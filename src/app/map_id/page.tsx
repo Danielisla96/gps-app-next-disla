@@ -11,18 +11,17 @@ import { Title, Bold } from "@tremor/react";
 
 // Styles
 import '@aws-amplify/ui-react/styles.css';
+import GpsMap from '@/components/gps_map';
 
 // Amplify configuration
 Amplify.configure(awsconfig);
 
-function BlogPage({ signOut, user }: WithAuthenticatorProps) {
+function MapId({ signOut, user }: WithAuthenticatorProps) {
 	return (
 		<div>
-			<Bold className="block w-full">Hola {user?.attributes?.email}</Bold>
-			<Title className="block w-full mt-2">Esta es la página de Blog</Title>
-			<Button className="block w-full mt-2" color="secondary" onClick={signOut}>Sign out</Button>
+			<GpsMap />
 		</div>
 	);
 }
 
-export default withAuthenticator(BlogPage);
+export default withAuthenticator(MapId);

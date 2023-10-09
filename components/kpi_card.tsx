@@ -65,7 +65,7 @@ export default function KpiCard() {
           <Text>Actualización: Hace 50 segundos.</Text>
           <Badge icon={RssIcon} color="violet">Signal: 100%</Badge>
           <div>
-            <Badge icon={UserCircleIcon} color="sky">Conductor: Si</Badge>
+            <Badge icon={UserCircleIcon} color="sky">Motor: Encendido</Badge>
           </div>
           <div>
             <Badge icon={EyeIcon} color="gray">Batería: ⚡</Badge>
