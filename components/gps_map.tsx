@@ -14,7 +14,7 @@ import { Card } from '@nextui-org/react';
 Amplify.configure(awsExports);
 
 export default function InitialViewport() {
-    const mapRef = useRef<MapRef>();
+    const mapRef = useRef<MapRef>(null);
 
     const patenteData = "LFXL-13"; 
     const fechaActualizacion = "09/10/2023 00:00:00";
@@ -42,7 +42,7 @@ export default function InitialViewport() {
         <Card> 
             <div>
                 <MapView
-                    ref={mapRef}
+                    ref={mapRef as React.RefObject<MapRef>}
                     attributionControl={false}
                     initialViewState={{
                         latitude: lat,
