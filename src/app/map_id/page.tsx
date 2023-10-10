@@ -1,4 +1,5 @@
 "use client"
+
 // External libraries
 import { Amplify } from 'aws-amplify';
 import { withAuthenticator } from '@aws-amplify/ui-react';
@@ -11,7 +12,7 @@ import { Title, Bold } from "@tremor/react";
 
 // Styles
 import '@aws-amplify/ui-react/styles.css';
-import GpsMap from '@/components/gps_map';
+import InitialViewport from '@/components/gps_map';
 
 // Amplify configuration
 Amplify.configure(awsconfig);
@@ -19,7 +20,7 @@ Amplify.configure(awsconfig);
 function MapId({ signOut, user }: WithAuthenticatorProps) {
 	return (
 		<div>
-			<GpsMap />
+			<InitialViewport />
 		</div>
 	);
 }

@@ -1,9 +1,9 @@
-import { useMap } from 'react-map-gl';
-import { Amplify } from 'aws-amplify';
-import { Button } from '@aws-amplify/ui-react';
-import { MapView } from '@aws-amplify/ui-react-geo';
+"use client"
 
-import '@aws-amplify/ui-react/styles.css';
+import { Amplify } from 'aws-amplify';
+import { MapView } from '@aws-amplify/ui-react-geo';
+import { Marker, FullscreenControl  } from 'react-map-gl';
+
 import '@aws-amplify/ui-react-geo/styles.css';
 
 import awsExports from '../src/aws-exports';
@@ -11,15 +11,23 @@ import { Card } from '@nextui-org/react';
 
 Amplify.configure(awsExports);
 
-
-const GpsMap = () => {
+export default function InitialViewport() {
   return (
-    <Card className='w-full h-[700px]' >
-        <MapView>
 
-        </MapView>
+    <Card className='h-[600px]'>
+    <MapView
+      attributionControl={false}
+      initialViewState={{
+        latitude: -33.60871038427122,
+        longitude: -70.71127775616908,
+        zoom: 15,
+      }}
+    >
+        <FullscreenControl />
+        <Marker latitude={-33.60871038427122} longitude={-70.71127775616908} />
+        
+
+    </MapView>
     </Card>
-  )
+  );
 }
-
-export default GpsMap
