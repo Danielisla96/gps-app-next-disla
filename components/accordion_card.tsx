@@ -1,4 +1,5 @@
 import React from "react";
+import Link from 'next/link';
 
 import {Accordion, AccordionItem, Avatar} from "@nextui-org/react";
 import { Button, Callout, Card } from "@tremor/react"
@@ -50,7 +51,9 @@ export default function AccordionCard() {
         </Callout>
         
         <div className="flex justify-center items-center mt-4">
+        <Link href="/register"> 
             <Button className="block w-full mt-2" color="violet"> Registra un nuevo dispositivo </Button>
+        </Link>
         </div>
     </Card>
     </div>

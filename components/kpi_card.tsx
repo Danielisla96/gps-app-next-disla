@@ -3,6 +3,7 @@ import { StatusOnlineIcon, ChartBarIcon, UserCircleIcon, RssIcon, EyeIcon, MapIc
 import AvatarCar from "./avatar_car";
 import { useEffect, useState } from "react";
 import {Popover, PopoverTrigger, PopoverContent, Input} from "@nextui-org/react";
+import Link from "next/link";
 
 
 export interface Availablility {
@@ -126,7 +127,9 @@ export default function KpiCard() {
 
       
       <div className="flex justify-center space-x-2">
+          <Link href="/map_id"> 
             <Button className="mx-auto m-2" color="blue" icon={MapIcon}> Ver Ubicación </Button>
+          </Link>
             <Button className="mx-auto m-2" color="rose" icon={ClockIcon}> Ver Historial </Button>
       </div>
 

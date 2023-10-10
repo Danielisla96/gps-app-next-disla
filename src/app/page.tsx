@@ -12,7 +12,6 @@ import { Title, Bold, Card } from "@tremor/react";
 
 // Styles
 import '@aws-amplify/ui-react/styles.css';
-import AreaChartComponent from '../../components/area_chart_component';
 import KpiCard from '@/components/kpi_card';
 import AccordionCard from '@/components/accordion_card';
 import { Divider } from "@tremor/react";

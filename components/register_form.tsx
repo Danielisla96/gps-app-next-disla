@@ -1,5 +1,6 @@
 import React from 'react'
 import { Button, Card, Input } from '@nextui-org/react'
+import Link from 'next/link'
 
 const RegisterForm = () => {
   return (
@@ -27,12 +28,14 @@ const RegisterForm = () => {
             Registrar
         </Button>  
 
+        <Link href="/"> 
         <Button 
             color="danger" 
             className="font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline w-full"
         >
             Atrás
         </Button>  
+        </Link>
     </Card>
   )
 }
